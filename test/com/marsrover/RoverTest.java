@@ -27,5 +27,12 @@ public class RoverTest {
 
     }
 
-    
+    @Test
+    public void shouldKnowToReturnFalseForInValidDirectionOfRoversMovement() {
+        Rover rover = new Rover(1, 2, "O");
+
+        assertEquals(false,rover.isValidDirection());
+
+    }
+
 }

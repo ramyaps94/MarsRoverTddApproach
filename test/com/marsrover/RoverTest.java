@@ -56,10 +56,19 @@ public class RoverTest {
     public void shouldReturnTheFinalPositionOfTheRover() {
         Rover rover = new Rover(1, 2, "N");
 
-        String controlInput = "lmlmlmlmm";
-        Rover expected = new Rover(1, 3, "N");
+        String controlInput = "lmlmlmlmmrm";
+        Rover expected = new Rover(2, 3, "E");
 
         assertEquals(expected, rover.getNextPositionOfRover(controlInput));
     }
 
+    @Test
+    public void shouldReturnTheFinalPositionOfTheRoverIfFinalXCoOrdinateIs0() {
+        Rover rover = new Rover(1, 2, "N");
+
+        String controlInput = "lmlmlmlmmlm";
+        Rover expected = new Rover(0, 3, "W");
+
+        assertEquals(expected, rover.getNextPositionOfRover(controlInput));
+    }
 }

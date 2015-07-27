@@ -1,9 +1,12 @@
 package com.marsrover;
 
+import java.util.ArrayList;
+
 public class Rover {
     private String direction;
     private int y;
     private int x;
+   // Plateau plateau = new Plateau((ArrayList < Integer) > {1, 2});
 
     public Rover(int x, int y, String direction) {
         this.x = x;
@@ -47,39 +50,40 @@ public class Rover {
     }
 
     public Rover getNextPositionOfRover(String controlInput) {
-        //if (controlInput == "l") {
-        //this.direction = "W";
         controlInput = controlInput.toUpperCase();
         for (int index = 0; index < controlInput.length(); index++) {
-            switch (controlInput.charAt(index)) {
-                case 'L':
-                    turnLeft();
-                    break;
-                case 'R':
-                    turnRight();
-                    break;
-                case 'M':
-                    moveInTheDirection();
-                    break;
+           // if(isRoverWithinBoundary(plateau)) {
+                switch (controlInput.charAt(index)) {
+                    case 'L':
+                        turnLeft();
+                        break;
+                    case 'R':
+                        turnRight();
+                        break;
+                    case 'M':
+                        moveInTheDirection();
+                        break;
+                }
             }
-        }
         return this;
     }
 
     private void moveInTheDirection() {
-        switch (this.direction) {
-            case "N":
-                this.y = y + 1;
-                break;
-            case "S":
-                this.y = y - 1;
-                break;
-            case "E":
-                this.x = x + 1;
-                break;
-            case "W":
-                this.x = x - 1;
-                break;
+        if (isValidDirection()) {
+            switch (this.direction) {
+                case "N":
+                    this.y = y + 1;
+                    break;
+                case "S":
+                    this.y = y - 1;
+                    break;
+                case "E":
+                    this.x = x + 1;
+                    break;
+                case "W":
+                    this.x = x - 1;
+                    break;
+            }
         }
     }
 

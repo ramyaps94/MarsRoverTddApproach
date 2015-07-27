@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Plateau {
     int topRightX;
     int topRightY;
+    int bottomLeftX = 0;
+    int bottomLeftY = 0;
 
     public Plateau(ArrayList<Integer> plateauTopRightCorner) {
         topRightX = plateauTopRightCorner.get(0);
@@ -17,5 +19,9 @@ public class Plateau {
 
     public int getTopRightY() {
         return topRightY;
+    }
+
+    public int getBottomLeftX() {
+        return bottomLeftX;
     }
 }

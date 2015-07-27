@@ -25,5 +25,24 @@ public class Rover {
         else
             return false;
     }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) return true;
+        if (that == null || getClass() != that.getClass()) return false;
+        Rover rover = (Rover) that;
+        if (x != rover.x)
+            return false;
+        if (y != rover.y)
+            return false;
+        return !(direction != null ? !direction.equals(rover.direction) : rover.direction != null);
+    }
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        return result;
+    }
 }
 

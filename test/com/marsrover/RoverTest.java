@@ -29,10 +29,17 @@ public class RoverTest {
 
     @Test
     public void shouldKnowToReturnFalseForInValidDirectionOfRoversMovement() {
-        Rover rover = new Rover(1, 2, "O");
+        Rover rover = new Rover(1, 2, "P");
 
         assertEquals(false,rover.isValidDirection());
 
+    }
+
+    @Test
+    public void shouldKnowTheEqualityOfTwoRoverObject() {
+        Rover rover = new Rover(1, 2, "N");
+
+        assertEquals(new Rover(1, 2, "N"),rover);
     }
 
 }

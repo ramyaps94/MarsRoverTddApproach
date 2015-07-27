@@ -52,4 +52,14 @@ public class RoverTest {
         assertEquals(expected, rover.getNextPositionOfRover(controlInput));
     }
 
+    @Test
+    public void shouldReturnTheFinalPositionOfTheRover() {
+        Rover rover = new Rover(1, 2, "N");
+
+        String controlInput = "lmlmlmlmm";
+        Rover expected = new Rover(1, 3, "N");
+
+        assertEquals(expected, rover.getNextPositionOfRover(controlInput));
+    }
+
 }

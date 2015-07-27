@@ -18,4 +18,14 @@ public class RoverTest {
 
         assertEquals(true, rover.isRoverWithinBoundary(plateau));
     }
+
+    @Test
+    public void shouldKnowValidDirectionOfRoversMovement() {
+        Rover rover = new Rover(1, 2, "N");
+
+        assertEquals(true,rover.isValidDirection());
+
+    }
+
+    
 }

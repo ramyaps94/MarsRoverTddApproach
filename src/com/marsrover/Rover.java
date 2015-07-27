@@ -8,7 +8,7 @@ public class Rover {
     public Rover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
-        this.direction = direction;
+        this.direction = direction.toUpperCase();
     }
 
     public boolean isRoverWithinBoundary(Plateau plateau) {
@@ -17,6 +17,13 @@ public class Rover {
             return false;
         else
             return true;
+    }
+
+    public boolean isValidDirection() {
+        if(this.direction == "N" || this.direction == "E" || this.direction == "S" || this.direction == "W" )
+            return true;
+        else
+            return false;
     }
 }
 

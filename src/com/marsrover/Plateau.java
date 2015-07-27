@@ -24,4 +24,8 @@ public class Plateau {
     public int getBottomLeftX() {
         return bottomLeftX;
     }
+
+    public int getBottomLeftY() {
+        return bottomLeftY;
+    }
 }

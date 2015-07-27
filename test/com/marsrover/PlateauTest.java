@@ -29,4 +29,12 @@ public class PlateauTest {
 
         assertEquals(0, plateau.getBottomLeftX());
     }
+
+    @Test
+    public void shouldKnowBottomLeftY() {
+        Tokenizer tokenizer = new Tokenizer("5 5");
+        Plateau plateau = new Plateau(tokenizer.tokenizeString());
+
+        assertEquals(0, plateau.getBottomLeftY());
+    }
 }

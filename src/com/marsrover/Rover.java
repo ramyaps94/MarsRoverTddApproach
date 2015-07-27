@@ -37,12 +37,20 @@ public class Rover {
             return false;
         return !(direction != null ? !direction.equals(rover.direction) : rover.direction != null);
     }
+
     @Override
     public int hashCode() {
         int result = x;
         result = 31 * result + y;
         result = 31 * result + (direction != null ? direction.hashCode() : 0);
         return result;
+    }
+
+    public Rover getNextPositionOfRover(String controlInput) {
+        if (controlInput == "l") {
+            this.direction = "W";
+        }
+        return this;
     }
 }
 

@@ -42,4 +42,14 @@ public class RoverTest {
         assertEquals(new Rover(1, 2, "N"),rover);
     }
 
+    @Test
+    public void shouldReturnTheInitialPositionOfTheRover() {
+        Rover rover = new Rover(1, 2, "N");
+
+        String controlInput = "l";
+        Rover expected = new Rover(1, 2, "W");
+
+        assertEquals(expected, rover.getNextPositionOfRover(controlInput));
+    }
+
 }

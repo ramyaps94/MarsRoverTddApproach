@@ -1,12 +1,9 @@
 package com.marsrover;
 
-import java.util.ArrayList;
-
 public class Rover {
     private String direction;
     private int y;
     private int x;
-   // Plateau plateau = new Plateau((ArrayList < Integer) > {1, 2});
 
     public Rover(int x, int y, String direction) {
         this.x = x;
@@ -52,7 +49,6 @@ public class Rover {
     public Rover getNextPositionOfRover(String controlInput) {
         controlInput = controlInput.toUpperCase();
         for (int index = 0; index < controlInput.length(); index++) {
-           // if(isRoverWithinBoundary(plateau)) {
                 switch (controlInput.charAt(index)) {
                     case 'L':
                         turnLeft();
